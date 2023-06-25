@@ -83,7 +83,7 @@ CREATE INDEX canton_code_idx_motorcycle ON accidents_by_motorcycle (cantoncode);
 
 -- Q3.1: Version requiring ALLOW Filtering for Query
 
-CREATE TABLE accidents_by_roadtype (
+CREATE TABLE accidents_by_roadtype_with_filtering (
   AccidentID int,
   AccidentYear int,
   AccidentMonth int,
@@ -102,7 +102,7 @@ CREATE INDEX motorcycle_idx_rt_roadtype ON accidents_by_roadtype (AccidentInvolv
 
 -- Q3.2: Version not requiring ALLOW Filtering for Query
 
-CREATE TABLE accident_by_roadtype_test (
+CREATE TABLE accident_by_roadtype (
   AccidentID int,
   AccidentYear int,
   AccidentMonth int,
@@ -114,10 +114,10 @@ CREATE TABLE accident_by_roadtype_test (
   PRIMARY KEY ((AccidentYear),RoadType, AccidentMonth, AccidentID)
 ) WITH CLUSTERING ORDER BY (RoadType ASC, AccidentMonth DESC, AccidentID DESC);
 
-CREATE INDEX canton_code_idx_rt_roadtype ON accident_by_roadtype_test (cantoncode);
-CREATE INDEX bicycle_idx_rt_roadtype ON accident_by_roadtype_test (AccidentInvolvingBicycle);
-CREATE INDEX pedestrian_idx_rt_roadtype ON accident_by_roadtype_test (AccidentInvolvingPedestrian);
-CREATE INDEX motorcycle_idx_rt_roadtype ON accident_by_roadtype_test (AccidentInvolvingMotorcycle);
+CREATE INDEX canton_code_idx_rt_roadtype ON accident_by_roadtype (cantoncode);
+CREATE INDEX bicycle_idx_rt_roadtype ON accident_by_roadtype (AccidentInvolvingBicycle);
+CREATE INDEX pedestrian_idx_rt_roadtype ON accident_by_roadtype (AccidentInvolvingPedestrian);
+CREATE INDEX motorcycle_idx_rt_roadtype ON accident_by_roadtype (AccidentInvolvingMotorcycle);
 
 -- Table for Q4:
 
