@@ -27,14 +27,14 @@ SELECT *
 FROM traffic_accidents.accidents_by_bicycle
 WHERE cantoncode = 'ZH'
   AND accidentyear = 2012
-  AND accidentinvolvingpedestrian = true;
+  AND accidentinvolvingbicycle = true;
 
 -- Q2.3: Involvement of motorcycles
 
 SELECT * FROM traffic_accidents.accidents_by_motorcycle
          WHERE cantoncode = 'ZH'
            AND accidentyear = 2012
-           AND accidentinvolvingpedestrian = true;
+           AND accidentinvolvingmotorcycle = true;
 
 -- Q3: Query to compare road types based on the amount of accidents (Optionally filtered by year, Involvement of X ...)
 
