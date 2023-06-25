@@ -15,7 +15,24 @@ CREATE TABLE accidents (
   AccidentWeekDay text,
   AccidentHour int,
   PRIMARY KEY (AccidentID)
-);
+) WITH additional_write_policy = '99p'
+    AND bloom_filter_fp_chance = 0.3
+    AND caching = {'keys': 'ALL', 'rows_per_partition': 1500}
+    AND cdc = false
+    AND comment = ''
+    AND compaction = {'compaction_window_size': '122',
+    				  'compaction_window_unit': 'DAYS',
+    				  'class': 'org.apache.cassandra.db.compaction.TimeWindowCompactionStrategy'}
+    AND compression = {'chunk_length_in_kb': '16', 'class': 'org.apache.cassandra.io.compress.LZ4Compressor'}
+    AND crc_check_chance = 1.0
+    AND default_time_to_live = 315360000
+    AND gc_grace_seconds = 864000
+    AND max_index_interval = 2048
+    AND memtable_flush_period_in_ms = 0
+    AND min_index_interval = 128
+    AND read_repair = 'BLOCKING'
+    AND speculative_retry = '99p';
+;
 
 -- Table for Q1:
 
@@ -26,8 +43,24 @@ CREATE TABLE accidents_by_year (
   CantonCode text,
   PRIMARY KEY ((AccidentYear), CantonCode, AccidentMonth, AccidentID)
 
-) WITH CLUSTERING ORDER BY (CantonCode ASC , AccidentMonth DESC, AccidentID DESC);
-
+) WITH CLUSTERING ORDER BY (CantonCode ASC , AccidentMonth DESC, AccidentID DESC)
+    AND additional_write_policy = '99p'
+    AND bloom_filter_fp_chance = 0.3
+    AND caching = {'keys': 'ALL', 'rows_per_partition': 1500}
+    AND cdc = false
+    AND comment = ''
+    AND compaction = {'compaction_window_size': '122',
+    				  'compaction_window_unit': 'DAYS',
+    				  'class': 'org.apache.cassandra.db.compaction.TimeWindowCompactionStrategy'}
+    AND compression = {'chunk_length_in_kb': '16', 'class': 'org.apache.cassandra.io.compress.LZ4Compressor'}
+    AND crc_check_chance = 1.0
+    AND default_time_to_live = 315360000
+    AND gc_grace_seconds = 864000
+    AND max_index_interval = 2048
+    AND memtable_flush_period_in_ms = 0
+    AND min_index_interval = 128
+    AND read_repair = 'BLOCKING'
+    AND speculative_retry = '99p';
 
 -- Table for Q2:
 
@@ -43,7 +76,24 @@ CREATE TABLE accidents_by_pedestrian (
   AccidentWeekDay_en text,
   AccidentHour int,
   PRIMARY KEY ((AccidentInvolvingPedestrian, AccidentYear), AccidentMonth, AccidentID)
-) WITH CLUSTERING ORDER BY (AccidentMonth DESC, AccidentID DESC);
+) WITH CLUSTERING ORDER BY (AccidentMonth DESC, AccidentID DESC)
+    AND additional_write_policy = '99p'
+    AND bloom_filter_fp_chance = 0.3
+    AND caching = {'keys': 'ALL', 'rows_per_partition': 1500}
+    AND cdc = false
+    AND comment = ''
+    AND compaction = {'compaction_window_size': '122',
+    				  'compaction_window_unit': 'DAYS',
+    				  'class': 'org.apache.cassandra.db.compaction.TimeWindowCompactionStrategy'}
+    AND compression = {'chunk_length_in_kb': '16', 'class': 'org.apache.cassandra.io.compress.LZ4Compressor'}
+    AND crc_check_chance = 1.0
+    AND default_time_to_live = 315360000
+    AND gc_grace_seconds = 864000
+    AND max_index_interval = 2048
+    AND memtable_flush_period_in_ms = 0
+    AND min_index_interval = 128
+    AND read_repair = 'BLOCKING'
+    AND speculative_retry = '99p';
 
 CREATE INDEX canton_code_idx ON accidents_by_pedestrian (cantoncode);
 
@@ -59,8 +109,24 @@ CREATE TABLE accidents_by_bicycle (
   AccidentWeekDay_en text,
   AccidentHour int,
   PRIMARY KEY ((AccidentInvolvingBicycle, AccidentYear), AccidentMonth, AccidentID)
-) WITH CLUSTERING ORDER BY (AccidentMonth DESC, AccidentID DESC);
-
+) WITH CLUSTERING ORDER BY (AccidentMonth DESC, AccidentID DESC)
+    AND additional_write_policy = '99p'
+    AND bloom_filter_fp_chance = 0.3
+    AND caching = {'keys': 'ALL', 'rows_per_partition': 1500}
+    AND cdc = false
+    AND comment = ''
+    AND compaction = {'compaction_window_size': '122',
+    				  'compaction_window_unit': 'DAYS',
+    				  'class': 'org.apache.cassandra.db.compaction.TimeWindowCompactionStrategy'}
+    AND compression = {'chunk_length_in_kb': '16', 'class': 'org.apache.cassandra.io.compress.LZ4Compressor'}
+    AND crc_check_chance = 1.0
+    AND default_time_to_live = 315360000
+    AND gc_grace_seconds = 864000
+    AND max_index_interval = 2048
+    AND memtable_flush_period_in_ms = 0
+    AND min_index_interval = 128
+    AND read_repair = 'BLOCKING'
+    AND speculative_retry = '99p';
 CREATE INDEX canton_code_idx_bicycle ON accidents_by_bicycle(cantoncode);
 
 -- Q2.2: Querying about motorcycles
@@ -75,7 +141,24 @@ CREATE TABLE accidents_by_motorcycle (
   AccidentWeekDay_en text,
   AccidentHour int,
   PRIMARY KEY ((AccidentInvolvingMotorcycle, AccidentYear), AccidentMonth, AccidentID)
-) WITH CLUSTERING ORDER BY (AccidentMonth DESC, AccidentID DESC);
+) WITH CLUSTERING ORDER BY (AccidentMonth DESC, AccidentID DESC)
+    AND additional_write_policy = '99p'
+    AND bloom_filter_fp_chance = 0.3
+    AND caching = {'keys': 'ALL', 'rows_per_partition': 1500}
+    AND cdc = false
+    AND comment = ''
+    AND compaction = {'compaction_window_size': '122',
+    				  'compaction_window_unit': 'DAYS',
+    				  'class': 'org.apache.cassandra.db.compaction.TimeWindowCompactionStrategy'}
+    AND compression = {'chunk_length_in_kb': '16', 'class': 'org.apache.cassandra.io.compress.LZ4Compressor'}
+    AND crc_check_chance = 1.0
+    AND default_time_to_live = 315360000
+    AND gc_grace_seconds = 864000
+    AND max_index_interval = 2048
+    AND memtable_flush_period_in_ms = 0
+    AND min_index_interval = 128
+    AND read_repair = 'BLOCKING'
+    AND speculative_retry = '99p';
 
 CREATE INDEX canton_code_idx_motorcycle ON accidents_by_motorcycle (cantoncode);
 
@@ -112,7 +195,25 @@ CREATE TABLE accident_by_roadtype (
   AccidentInvolvingMotorcycle boolean,
   CantonCode text,
   PRIMARY KEY ((AccidentYear),RoadType, AccidentMonth, AccidentID)
-) WITH CLUSTERING ORDER BY (RoadType ASC, AccidentMonth DESC, AccidentID DESC);
+) WITH CLUSTERING ORDER BY (RoadType ASC, AccidentMonth DESC, AccidentID DESC)
+    AND additional_write_policy = '99p'
+    AND bloom_filter_fp_chance = 0.3
+    AND caching = {'keys': 'ALL', 'rows_per_partition': 1500}
+    AND cdc = false
+    AND comment = ''
+    AND compaction = {'compaction_window_size': '122',
+    				  'compaction_window_unit': 'DAYS',
+    				  'class': 'org.apache.cassandra.db.compaction.TimeWindowCompactionStrategy'}
+    AND compression = {'chunk_length_in_kb': '16', 'class': 'org.apache.cassandra.io.compress.LZ4Compressor'}
+    AND crc_check_chance = 1.0
+    AND default_time_to_live = 315360000
+    AND gc_grace_seconds = 864000
+    AND max_index_interval = 2048
+    AND memtable_flush_period_in_ms = 0
+    AND min_index_interval = 128
+    AND read_repair = 'BLOCKING'
+    AND speculative_retry = '99p';
+
 
 CREATE INDEX canton_code_idx_rt_roadtype ON accident_by_roadtype (cantoncode);
 CREATE INDEX bicycle_idx_rt_roadtype ON accident_by_roadtype (AccidentInvolvingBicycle);
@@ -131,7 +232,24 @@ CREATE TABLE accident_by_AccidentSeverityCategory (
   AccidentInvolvingMotorcycle boolean,
   CantonCode text,
   PRIMARY KEY ((AccidentYear),AccidentSeverityCategory, AccidentMonth, AccidentID)
-) WITH CLUSTERING ORDER BY (AccidentSeverityCategory ASC, AccidentMonth DESC, AccidentID DESC);
+) WITH CLUSTERING ORDER BY (AccidentSeverityCategory ASC, AccidentMonth DESC, AccidentID DESC)
+    AND additional_write_policy = '99p'
+    AND bloom_filter_fp_chance = 0.3
+    AND caching = {'keys': 'ALL', 'rows_per_partition': 1500}
+    AND cdc = false
+    AND comment = ''
+    AND compaction = {'compaction_window_size': '122',
+    				  'compaction_window_unit': 'DAYS',
+    				  'class': 'org.apache.cassandra.db.compaction.TimeWindowCompactionStrategy'}
+    AND compression = {'chunk_length_in_kb': '16', 'class': 'org.apache.cassandra.io.compress.LZ4Compressor'}
+    AND crc_check_chance = 1.0
+    AND default_time_to_live = 315360000
+    AND gc_grace_seconds = 864000
+    AND max_index_interval = 2048
+    AND memtable_flush_period_in_ms = 0
+    AND min_index_interval = 128
+    AND read_repair = 'BLOCKING'
+    AND speculative_retry = '99p';
 
 CREATE INDEX canton_code_new_idx_severity ON accident_by_AccidentSeverityCategory (cantoncode);
 CREATE INDEX bicycle_idx_new_severity ON accident_by_AccidentSeverityCategory (AccidentInvolvingBicycle);
