@@ -48,7 +48,7 @@ ALLOW FILTERING ;
 -- Q3.2: Using Table 3.2 without ALLOW FILTERING
 
 SELECT roadtype, COUNT(*) AS RoadTypeCount
-FROM accident_by_roadtype_test
+FROM accident_by_roadtype
 WHERE accidentinvolvingbicycle = true AND accidentyear = 2013
 GROUP BY roadtype;
 
