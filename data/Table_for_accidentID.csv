@@ -1,0 +1,12 @@
+,AccidentType,AccidentType_en
+0,at5,Accident when crossing the lane(s)
+1,at1,Accident when overtaking or changing lanes
+2,at3,Accident when turning left or right
+3,at8,Accident involving pedestrian(s)
+4,at9,Accident involving animal(s)
+5,at2,Accident with rear-end collision
+6,at7,Accident when parking
+7,at00,Other
+8,at6,Accident with head-on collision
+9,at0,Accident with skidding or self-accident
+10,at4,Accident when turning-into main road
