@@ -1,8 +1,8 @@
 # MDS_SmartCity
-Creating a Column Family Database storing traffic accident related data for a monthly analysis use case. 
+Creating a wide-column store database using Cassandra on the topic 'Towards a Traffic Accident Database in a Smart City Use Case' and comparing it with the relational database Oracle
 
 ## Data
-Unfälle mit Personenschaden 
+Unfälle mit Personenschaden  
 https://data.geo.admin.ch/ch.astra.unfaelle-personenschaeden_alle/ 
 
 
