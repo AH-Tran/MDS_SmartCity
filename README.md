@@ -40,7 +40,7 @@ Image Documentation (Cassandra):
 https://hub.docker.com/r/bitnami/cassandra/#environment-variables  
 
 Image Documentation (Oracle):
-[Oracle Database XE Release 21c (21.3.0.0) Docker Image Documentation](https://container-registry.oracle.com/ords/f?p=113:4:3402664383330:::4:P4_REPOSITORY,AI_REPOSITORY,AI_REPOSITORY_NAME,P4_REPOSITORY_NAME,P4_EULA_ID,P4_BUSINESS_AREA_ID:803,803,Oracle%20Database%20Express%20Edition,Oracle%20Database%20Express%20Edition,1,0&cs=3Z2oBxPqe_Q_xqan1iSP7oeilIBbliC3CfDuewUsdnm0TETg9WA6gSo-3XpBZ-DvZXiPQcHI9aUBpysBJnxhrZg)
+<br>[Oracle Database XE Release 21c (21.3.0.0) Docker Image Documentation](https://container-registry.oracle.com/ords/f?p=113:4:3402664383330:::4:P4_REPOSITORY,AI_REPOSITORY,AI_REPOSITORY_NAME,P4_REPOSITORY_NAME,P4_EULA_ID,P4_BUSINESS_AREA_ID:803,803,Oracle%20Database%20Express%20Edition,Oracle%20Database%20Express%20Edition,1,0&cs=3Z2oBxPqe_Q_xqan1iSP7oeilIBbliC3CfDuewUsdnm0TETg9WA6gSo-3XpBZ-DvZXiPQcHI9aUBpysBJnxhrZg)
 
 Cassandra Documentation:  
 https://cassandra.apache.org/doc/latest/cassandra/getting_started/index.html  
