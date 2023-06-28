@@ -16,7 +16,7 @@ Recommended and tested under Ubuntu 20.04
 
 ## Repository structure
 * `\data`: Repository for raw data sets
-* `\database_setup`: Set-up folder for the Oracle and Cassandra database
+* `\database_setup`: Set-up folder for the Oracle and Cassandra database + Key Queries
 * `\documentation`: Repository for the project report
 * `\script`: Scripts for transforming the raw data sets
 
