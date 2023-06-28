@@ -1,0 +1,19 @@
+version: '3.1'
+services:
+  oracle-db:
+    image: container-registry.oracle.com/database/express:latest
+    environment:
+      - ORACLE_SID=XE
+      - ORACLE_PWD=oracle
+    ports:
+      - 1521:1521
+    volumes:
+      - oracle-data:/opt/oracle/oradata
+    healthcheck:
+      test: ["CMD-SHELL", "echo exit | sqlplus system/test@//localhost:1521/XE | grep -c 'ORA-00000: normal, successful completion'"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+volumes:
+  oracle-data:
