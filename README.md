@@ -1,12 +1,26 @@
 # MDS_SmartCity
-Creating a wide-column store database using Cassandra on the topic 'Towards a Traffic Accident Database in a Smart City Use Case' and comparing it with the relational database Oracle
+```
+A Traffic Accident Database using Oracle(SQL) and Cassandra(NoSQL)
+```
+Creating a wide-column store database using Cassandra on the topic 'Towards a Traffic Accident Database in a Smart City Use Case' and comparing its query performance with the relational database Oracle.
 
 ## Data
 Unfälle mit Personenschaden  
 https://data.geo.admin.ch/ch.astra.unfaelle-personenschaeden_alle/ 
 
+## Prerequisites
+* Docker
+* Docker-compose
 
-## Cassandra Database
+Recommended and tested under Ubuntu 20.04
+
+## Repository structure
+* `\data`: Repository for raw data sets
+* `\database_setup`: Set-up folder for the Oracle and Cassandra database
+* `\documentation`: Repository for the project report
+* `\script`: Scripts for transforming the raw data sets
+
+## How to use: Cassandra Database
 Pull the Cassandra Image:  
 ``docker pull bitnami/cassandra:latest``
 
@@ -20,7 +34,7 @@ Create & Start Docker Containers (while in GitHub Repo):
 Stop & Remove Docker Containers:  
 ``docker-compose down``
 
-## Oracle Database
+## How to use: Oracle Database
 Pull the Oracle Image:  
 ``docker pull container-registry.oracle.com/database/express:latest``
 
