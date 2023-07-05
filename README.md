@@ -11,6 +11,8 @@ https://data.geo.admin.ch/ch.astra.unfaelle-personenschaeden_alle/
 ## Prerequisites
 * Docker
 * Docker-compose
+* Cassandra Docker Image
+* Oracle Docker Image
 
 Recommended and tested under Ubuntu 20.04
 
